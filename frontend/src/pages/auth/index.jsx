@@ -16,6 +16,7 @@ function AuthPage(){
         setSignupFormData,
         handleRegisterUser,
         handleLoginUser,
+        usernameMessage,
         isAvailable,
         loading} = useContext(AuthContext);
     // ----------------------------------
@@ -82,9 +83,9 @@ function AuthPage(){
                                 {loading ? (
                                 <p>Checking availability...</p>
                                 ) : isAvailable === null ? null : isAvailable ? (
-                                <p className="text-green-500 text-sm">Username is available!</p>
+                                <p className="text-green-500 text-sm">{usernameMessage}</p>
                                 ) : (
-                                <p className="text-red-500 text-sm">Username is already taken.</p>
+                                <p className="text-red-500 text-sm">{usernameMessage}</p>
                                 )}
                         </CardContent>
                     </Card>
